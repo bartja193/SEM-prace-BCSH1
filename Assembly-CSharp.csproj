@@ -65,7 +65,6 @@
     <Compile Include="Assets\Scripts\BarmanUI.cs" />
     <Compile Include="Assets\Scripts\Barman.cs" />
     <Compile Include="Assets\Scripts\GoldDeposit.cs" />
-    <Compile Include="Assets\Scripts\BridgeController.cs" />
     <Compile Include="Assets\Scripts\Merchant.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class ProspectorAI : MonoBehaviour
 {
+
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
+
     public float moveSpeed = 2f;
     public float miningTime = 3f;
     public float goldTarget = 10f;
@@ -9,7 +13,7 @@ public class ProspectorAI : MonoBehaviour
     private float collectedGold = 0f;
     private float miningTimer = 0f;
 
-    private Transform river;
+    private Transform riverEdge;
     private Transform goldMerchant;
 
     private enum State { GoToRiver, Mining, GoToMerchant, Selling }
@@ -17,17 +21,22 @@ public class ProspectorAI : MonoBehaviour
 
     void Start()
     {
-        river = GameObject.Find("River").transform;
+        riverEdge = GameObject.Find("riverEdge").transform;
         goldMerchant = GameObject.Find("GoldMerchant").transform;
+
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
+
+        animator.SetBool("isMoving", false);
         switch (currentState)
         {
             case State.GoToRiver:
-                MoveToTarget(river.position);
-                if (Vector2.Distance(transform.position, river.position) < 1f)
+                MoveToTarget(riverEdge.position);
+                if (Vector2.Distance(transform.position, riverEdge.position) < 1f)
                     currentState = State.Mining;
                 break;
 
@@ -64,5 +73,11 @@ public class ProspectorAI : MonoBehaviour
     {
         Vector3 direction = (target - transform.position).normalized;
         transform.position += direction * moveSpeed * Time.deltaTime;
+        animator.SetBool("isMoving", true);
+
+        if (direction.x < 0)
+            spriteRenderer.flipX = true;
+        else if (direction.x > 0)
+            spriteRenderer.flipX = false;
     }
 }

@@ -15,7 +15,7 @@ public class ShopUI : MonoBehaviour
     public TextMeshProUGUI drillPriceText;
     public TextMeshProUGUI bridgePriceText;
 
-    public BridgeController bridge;
+    public GameObject bridge;
 
     private bool isOpen = false;
     private bool bridgeBought = false;
@@ -73,13 +73,20 @@ public class ShopUI : MonoBehaviour
     {
         if (InventoryManager.Instance.money < 500f)
         {
-            Debug.Log("Nemáš dost peněz! Potřebuješ $500");
+            Debug.Log("Nemáš dost peněz!");
             return;
         }
 
         InventoryManager.Instance.SpendMoney(500f);
         bridgeBought = true;
-        bridge.GetComponent<BridgeController>().BuildBridge();
+
+        Physics2D.IgnoreLayerCollision(
+            LayerMask.NameToLayer("Default"),
+            LayerMask.NameToLayer("Bridge"),
+            true
+        );
+
+        bridge.SetActive(true);
         Debug.Log("Most postaven!");
         CloseShop();
     }
