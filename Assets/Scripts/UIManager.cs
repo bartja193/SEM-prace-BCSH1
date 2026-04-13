@@ -20,7 +20,7 @@ public class UIManager : MonoBehaviour
     {
         if (InventoryManager.Instance == null) return;
 
-        goldText.text = "Zlato: " + InventoryManager.Instance.gold.ToString("F1") + "g";
-        moneyText.text = "Peníze: $" + InventoryManager.Instance.money.ToString("F0");
+        goldText.text = InventoryManager.Instance.gold.ToString("F1") + "g";
+        moneyText.text = InventoryManager.Instance.money.ToString("F0") + "$";
     }
 }
