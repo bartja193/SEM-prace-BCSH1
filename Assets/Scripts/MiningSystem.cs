@@ -13,6 +13,7 @@ public class MiningSystem : MonoBehaviour
     private bool isMining = false;
     private float miningProgress = 0f;
     private GoldDeposit currentDeposit = null;
+    private Animator playerAnimator;
 
     private enum InteractType { None, River, Deposit }
     private InteractType currentInteract = InteractType.None;
@@ -27,6 +28,7 @@ public class MiningSystem : MonoBehaviour
 
     void Start()
     {
+        playerAnimator = GameObject.FindWithTag("Player").GetComponent<Animator>();
         miningBar.gameObject.SetActive(false);
     }
 
@@ -40,6 +42,7 @@ public class MiningSystem : MonoBehaviour
             currentInteract = InteractType.River;
             isMining = true;
             miningBar.gameObject.SetActive(true);
+            playerAnimator.SetBool("isPanning", true);
         }
 
         if (isMining)
@@ -67,6 +70,7 @@ public class MiningSystem : MonoBehaviour
         currentInteract = InteractType.Deposit;
         isMining = true;
         miningBar.gameObject.SetActive(true);
+        playerAnimator.SetBool("isMining", true);
     }
 
     void CompleteMining()
@@ -117,6 +121,8 @@ public class MiningSystem : MonoBehaviour
         miningBar.gameObject.SetActive(false);
         currentDeposit = null;
         currentInteract = InteractType.None;
+        playerAnimator.SetBool("isPanning", false);
+        playerAnimator.SetBool("isMining", false);
     }
 
     public void SetNearRiver(bool value)
