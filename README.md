@@ -30,3 +30,17 @@ Plynulý pohyb hráče po mapě, animace těžení, prodávání a souboje
 
 \- Kenney.nl - CC0
 
+
+
+
+
+\## Music Credits
+
+
+
+\- \*\*Swamp Showdown\*\* by Steve Oxen  
+
+&#x20; Licensed from \[FesliyanStudios](https://www.fesliyanstudios.com)  
+
+&#x20; (Royalty-free music)
+

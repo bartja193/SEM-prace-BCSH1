@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\GoldMerchant.cs" />
     <Compile Include="Assets\Scripts\BarmanUI.cs" />
     <Compile Include="Assets\Scripts\Barman.cs" />
+    <Compile Include="Assets\Scripts\LevelTransition.cs" />
     <Compile Include="Assets\Scripts\GoldDeposit.cs" />
     <Compile Include="Assets\Scripts\Merchant.cs" />
   </ItemGroup>

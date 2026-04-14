@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a5f229b3fc981cf438a61fc17b980e09
+guid: 69ff815c01504a64c8e2d47b07df34f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8795115417816488040
-    second: GoldOre02_0
+      213: 7342363314189859909
+    second: GoldORe03_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GoldOre02_0
+      name: GoldORe03_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 784
-        height: 1168
+        x: 185
+        y: 267
+        width: 718
+        height: 553
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 868538dbfd68e0a70800000000000000
-      internalID: 8795115417816488040
+      spriteID: 54c7522688055e560800000000000000
+      internalID: 7342363314189859909
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GoldOre02_0: 8795115417816488040
+      GoldORe03_0: 7342363314189859909
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
