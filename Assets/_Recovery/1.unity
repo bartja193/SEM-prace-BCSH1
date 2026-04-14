@@ -1728,7 +1728,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 0.5450981, g: 0.2705882, b: 0.07450981, a: 1}
@@ -6573,7 +6573,6 @@ Transform:
   - {fileID: 2064445498}
   - {fileID: 605892334}
   - {fileID: 1125095069}
-  - {fileID: 1403381332}
   - {fileID: 1735771432}
   - {fileID: 772074556}
   - {fileID: 528813728}
@@ -10770,11 +10769,11 @@ Transform:
   m_GameObject: {fileID: 1403381331}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.9336, y: -0.268566, z: 0}
-  m_LocalScale: {x: 3.8172283, y: 83.807076, z: 1}
+  m_LocalPosition: {x: -0.001394602, y: 0.04501645, z: 0}
+  m_LocalScale: {x: 0.54006475, y: 1.141749, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 761665243}
+  m_Father: {fileID: 1590728465}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1403381333
 BoxCollider2D:
@@ -10810,7 +10809,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0013420582, y: 0.00085936626}
+  m_Offset: {x: -0.01729858, y: 0.0012736442}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -10820,7 +10819,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.0026841, y: 0.018948387}
+  m_Size: {x: 1.7923512, y: 0.053067766}
   m_EdgeRadius: 0
 --- !u!1 &1404832170
 GameObject:
@@ -11448,6 +11447,7 @@ GameObject:
   - component: {fileID: 1590728467}
   - component: {fileID: 1590728470}
   - component: {fileID: 1590728469}
+  - component: {fileID: 1590728471}
   m_Layer: 0
   m_Name: River
   m_TagString: Untagged
@@ -11542,6 +11542,7 @@ Transform:
   m_Children:
   - {fileID: 44913675}
   - {fileID: 281623423}
+  - {fileID: 1403381332}
   m_Father: {fileID: 1631541269}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1590728467
@@ -11670,7 +11671,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.27769607}
+  m_Offset: {x: 0, y: 0.28690693}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -11680,8 +11681,21 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.44463673}
+  m_Size: {x: 1, y: 0.426215}
   m_EdgeRadius: 0
+--- !u!114 &1590728471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590728461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13414f254918f094cadaa021dcb33824, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RiverAnimation
+  scrollSpeed: 0.5
 --- !u!1 &1601603242
 GameObject:
   m_ObjectHideFlags: 0
@@ -12601,7 +12615,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: -1279455693, guid: e08b56a30d761d44faf48029408e350a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
