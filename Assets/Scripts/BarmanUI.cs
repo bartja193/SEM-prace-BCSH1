@@ -7,10 +7,9 @@ public class BarmanUI : MonoBehaviour
     public static BarmanUI Instance;
 
     public GameObject barmanPanel;
-    public TextMeshProUGUI titleText;
-    public TextMeshProUGUI energyText;
     public Button sleepButton;
     public Button eatButton;
+    public Button exitButton;
 
     private bool isOpen = false;
 
@@ -28,16 +27,12 @@ public class BarmanUI : MonoBehaviour
 
         sleepButton.onClick.AddListener(() => Sleep());
         eatButton.onClick.AddListener(() => Eat());
+        exitButton.onClick.AddListener(() => CloseShop());
     }
 
     void Update()
     {
-        if (isOpen)
-        {
-            energyText.text = "Energie: " + EnergyManager.Instance.currentEnergy + "/"
-                            + EnergyManager.Instance.maxEnergy
-                            + "\nPeníze: $" + InventoryManager.Instance.money.ToString("F0");
-        }
+
     }
 
     public void ToggleShop()
@@ -50,7 +45,6 @@ public class BarmanUI : MonoBehaviour
     {
         isOpen = true;
         barmanPanel.SetActive(true);
-        titleText.text = "Hospoda\nSpánek: $100 | Jídlo: $20";
     }
 
     void CloseShop()
@@ -62,7 +56,6 @@ public class BarmanUI : MonoBehaviour
     void Sleep()
     {
         EnergyManager.Instance.Sleep();
-        CloseShop();
     }
 
     void Eat()

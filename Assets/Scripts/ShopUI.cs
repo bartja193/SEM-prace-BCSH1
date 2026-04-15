@@ -11,6 +11,7 @@ public class ShopUI : MonoBehaviour
     public Button buyPickaxeButton;
     public Button buyDrillButton;
     public Button buyBridgeButton;
+    public Button exitShopButton;
     public TextMeshProUGUI pickaxePriceText;
     public TextMeshProUGUI drillPriceText;
     public TextMeshProUGUI bridgePriceText;
@@ -19,6 +20,9 @@ public class ShopUI : MonoBehaviour
 
     private bool isOpen = false;
     private bool bridgeBought = false;
+    private bool pickaxeBought = false;
+    private bool drillBought = false;
+
 
     void Awake()
     {
@@ -35,6 +39,7 @@ public class ShopUI : MonoBehaviour
         buyPickaxeButton.onClick.AddListener(() => BuyTool(1));
         buyDrillButton.onClick.AddListener(() => BuyTool(2));
         buyBridgeButton.onClick.AddListener(() => BuyBridge());
+        exitShopButton.onClick.AddListener(() => CloseShop());
 
         pickaxePriceText.text = "Krumpáč - $" + ShopManager.Instance.availableTools[1].price;
         drillPriceText.text = "Vrtačka - $" + ShopManager.Instance.availableTools[2].price;
@@ -55,6 +60,7 @@ public class ShopUI : MonoBehaviour
 
         // Skryj tlačítko mostu pokud už je koupený
         buyBridgeButton.gameObject.SetActive(!bridgeBought);
+        buyPickaxeButton.gameObject.SetActive(!bridgeBought);
     }
 
     void CloseShop()
@@ -66,7 +72,11 @@ public class ShopUI : MonoBehaviour
     void BuyTool(int index)
     {
         ShopManager.Instance.BuyTool(index);
-        CloseShop();
+        if (index == 0) {
+            pickaxeBought = true;
+        } else if (index == 1) {
+            drillBought = true;
+        }
     }
 
     void BuyBridge()
