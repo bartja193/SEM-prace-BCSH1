@@ -1,46 +1,120 @@
 # SEM-prace-BCSH1
 
-Hra v prostředí Unity C#
 
-Hráč těží zlatou rudu v dalších levelech i další suroviny, prodává suroviny na dynamickém trhu za měnu kupuje lepší nářadí pro těžení později automatizované systémy na těžení, jídlo a místo na spaní.
 
-3 levely měnící se nástrahy rozpoložení surovin i nové suroviny
+Semestrální práce – BCSH1
 
-trh ovlivňovaný NPC obchodníky, konkurenční NPC soutěží o ploty/ložiska
+Varianta: (b) Jednoduchá počítačová hra
 
-Progres, peníze, odemčené úrovně a high score jsou ukládány
+Student: Bartoň Jan st72463 
 
-Plynulý pohyb hráče po mapě, animace těžení, prodávání a souboje
+Git repozitář: https://github.com/bartja193/SEM-prace-BCSH1
 
 
 
+\*\*Původní vize hry\*\*
 
+\- Název hry GoldWest
 
-\## Assety
+\- 2D Hra v prostředí Unity C#
 
-\- Cowboys Cats 2D - MGLawless
+\- Hráč těží zlatou rudu v dalších levelech i další suroviny, prodává suroviny na dynamickém trhu za měnu kupuje lepší nářadí pro těžení
 
-&#x20; URL: https://assetstore.unity.com/packages/...
+\- později automatizované systémy na těžení
 
-&#x20; Licence: Standard Unity Asset Store EULA
+\- jídlo a místo na spaní.
 
-&#x20; Použito pro: postavy, budovy, prostředí
+\- 3 levely měnící se nástrahy rozpoložení surovin i nové suroviny
 
+\- trh ovlivňovaný NPC obchodníky, konkurenční NPC soutěží o ploty/ložiska
 
+\- Progres, peníze, odemčené úrovně a high score jsou ukládány
 
-\- Kenney.nl - CC0
-
-
-
-
-
-\## Music Credits
+\- Plynulý pohyb hráče po mapě, animace těžení, prodávání a souboje
 
 
 
-\- \*\*Swamp Showdown\*\* by Steve Oxen  
+\*\*Stav funkcionalit\*\* –
 
-&#x20; Licensed from \[FesliyanStudios](https://www.fesliyanstudios.com)  
+\- 🟩-téměř hotové/hotové
 
-&#x20; (Royalty-free music)
+\- 🟨-prozatímní/rozpracované
+
+\- 🟥-není hotové/plánované
+
+
+
+\- Základní logika Hry - 🟩
+
+\- systém Energie - 🟩
+
+\- Jednoduchá AI - 🟩
+
+\- Pokročilá AI - 🟥
+
+\- 1 úroveň - 🟩
+
+\- 2 úroveň - 🟨
+
+\- 3 úroveň - 🟥
+
+\- Animace - 🟨
+
+\- Teleport mezi levely - 🟥
+
+\- Nákup zaměstnanců (automatizace) - 🟥
+
+\- PVE - 🟥
+
+\- Nákup plotu/domu -  🟥
+
+\- Systém resetu pro obdržení bonusu - 🟥
+
+\- Vybalancování progresu - 🟥
+
+
+
+
+
+\*\*Použité technologie\*\*
+
+\- Jazyk: C#
+
+\- Engine: Unity
+
+
+
+\*\*Assety\*\*
+
+\- Cowboys Cats 2D by MGLawless (Unity Asset Store)
+
+\- Kenney.nl (CC0)
+
+
+
+\*\*Hudba\*\*
+
+\- Swamp Showdown by Steve Oxen (FesliyanStudios) – royalty-free
+
+
+
+\*\*Tutoriály\*\*
+
+\- Character Animations tutorial (YouTube)
+
+&#x20; https://www.youtube.com/watch?v=Zcl3QcNzgrk
+
+
+
+\- 2D Top Down RPG (YouTube)
+
+https://www.youtube.com/watch?v=9zzUq6T-rtA\&list=PL6bqhqO0Ba776ksb3F9P\_xmUMT9WvmfFT
+
+
+
+\*\*Poznámky k licencím\*\*
+
+\- Všechny použité assety a hudba jsou používány v souladu s jejich licencemi.
+
+\- Hra je vytvořena výhradně pro účely školní semestrální práce (nekomerční použití).
 
