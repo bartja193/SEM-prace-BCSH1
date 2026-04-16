@@ -3,8 +3,11 @@
 
 
 Semestrální práce – BCSH1
+
 Varianta: (b) Jednoduchá počítačová hra
+
 Student: Bartoň Jan st72463 
+
 Git repozitář: https://github.com/bartja193/SEM-prace-BCSH1
 
 
@@ -49,6 +52,13 @@ Git repozitář: https://github.com/bartja193/SEM-prace-BCSH1
 	
 **Screenshots**
 
+	![Screenshot](https://github.com/bartja193/SEM-prace-BCSH1/blob/main/Screenshots/Town.png)
+	
+	![Screenshot](https://github.com/bartja193/SEM-prace-BCSH1/blob/main/Screenshots/Merchant.png)
+	
+	![Screenshot](https://github.com/bartja193/SEM-prace-BCSH1/blob/main/Screenshots/Shop.png)
+	
+	![Screenshot](https://github.com/bartja193/SEM-prace-BCSH1/blob/main/Screenshots/Town.png)
 
 **Použité technologie**
 
