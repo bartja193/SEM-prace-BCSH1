@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ToolData
   toolName: 
   miningSpeed: 3
-  price: 500
+  price: 800

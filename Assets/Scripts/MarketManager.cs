@@ -4,8 +4,8 @@ public class MarketManager : MonoBehaviour
 {
     public static MarketManager Instance;
 
-    public float baseGoldPrice = 50f;
-    private float currentPrice;
+    public float baseGoldPrice = 30f;
+    public float currentPrice;
     public float supplyPressure = 0f;
 
     void Awake()
@@ -28,12 +28,10 @@ public class MarketManager : MonoBehaviour
 
     void Update()
     {
-        // Cena se postupně vrací na základní hodnotu
         supplyPressure = Mathf.Lerp(supplyPressure, 0f, Time.deltaTime * 0.1f);
 
-        // Cena kolísá + klesá čím víc prodáváš
         currentPrice = baseGoldPrice * (1f - supplyPressure * 0.5f);
-        currentPrice += Mathf.Sin(Time.time * 0.3f) * 5f;
+        currentPrice += (Mathf.PerlinNoise(Time.time * 0.2f, 0f) - 0.5f) * 60f;
         currentPrice = Mathf.Max(currentPrice, 10f);
     }
 
@@ -51,7 +49,7 @@ public class MarketManager : MonoBehaviour
         }
 
         float earned = amount * currentPrice;
-        supplyPressure += amount * 0.01f;
+        supplyPressure += amount * 0.3f;
 
         InventoryManager.Instance.SpendGold(amount);
         InventoryManager.Instance.AddMoney(earned);

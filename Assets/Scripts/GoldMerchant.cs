@@ -7,7 +7,11 @@ public class GoldMerchant : MonoBehaviour
     void Update()
     {
         if (playerNearby && Input.GetKeyDown(KeyCode.E))
-        {
+            ProdejZlato();
+    }
+
+    void ProdejZlato()
+    {
             float gold = InventoryManager.Instance.gold;
 
             if (gold <= 0)
@@ -18,7 +22,6 @@ public class GoldMerchant : MonoBehaviour
 
             MarketManager.Instance.SellGold(gold);
             Debug.Log("Prodáno! Peníze: $" + InventoryManager.Instance.money);
-        }
     }
 
     void OnTriggerEnter2D(Collider2D other)

@@ -43,7 +43,7 @@ public class ShopUI : MonoBehaviour
 
         pickaxePriceText.text = "Krumpáč - $" + ShopManager.Instance.availableTools[1].price;
         drillPriceText.text = "Vrtačka - $" + ShopManager.Instance.availableTools[2].price;
-        bridgePriceText.text = "Most - $500";
+        bridgePriceText.text = "Most - $5000";
     }
 
     public void ToggleShop()
@@ -58,7 +58,6 @@ public class ShopUI : MonoBehaviour
         shopPanel.SetActive(true);
         shopTitle.text = "Obchod";
 
-        // Skryj tlačítko mostu pokud už je koupený
         buyBridgeButton.gameObject.SetActive(!bridgeBought);
         buyPickaxeButton.gameObject.SetActive(!bridgeBought);
     }
@@ -81,13 +80,13 @@ public class ShopUI : MonoBehaviour
 
     void BuyBridge()
     {
-        if (InventoryManager.Instance.money < 500f)
+        if (InventoryManager.Instance.money < 5000f)
         {
             Debug.Log("Nemáš dost peněz!");
             return;
         }
 
-        InventoryManager.Instance.SpendMoney(500f);
+        InventoryManager.Instance.SpendMoney(5000f);
         bridgeBought = true;
 
         Physics2D.IgnoreLayerCollision(

@@ -14,7 +14,7 @@ public class ProspectorAI : MonoBehaviour
     private float miningTimer = 0f;
 
     private Transform riverEdge;
-    private Transform goldMerchant;
+    private Transform merchantEdge;
 
     private enum State { GoToRiver, Mining, GoToMerchant, Selling }
     private State currentState = State.GoToRiver;
@@ -22,7 +22,7 @@ public class ProspectorAI : MonoBehaviour
     void Start()
     {
         riverEdge = GameObject.Find("riverEdge").transform;
-        goldMerchant = GameObject.Find("GoldMerchant").transform;
+        merchantEdge = GameObject.Find("merchantEdge").transform;
 
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -54,13 +54,21 @@ public class ProspectorAI : MonoBehaviour
                 break;
 
             case State.GoToMerchant:
-                MoveToTarget(goldMerchant.position);
-                if (Vector2.Distance(transform.position, goldMerchant.position) < 1f)
-                    currentState = State.Selling;
+                MoveToTarget(merchantEdge.position);
+                if (Vector2.Distance(transform.position, merchantEdge.position) < 1f)
+                {
+                    if (MarketManager.Instance.GetCurrentPrice() >= 40f)
+                    {
+                        currentState = State.Selling;
+                    }
+                    else
+                    {
+                        Debug.Log("Čeká na lepší cenu");
+                    }
+                }
                 break;
 
             case State.Selling:
-                // Ovlivní cenu na trhu
                 MarketManager.Instance.supplyPressure += collectedGold * 0.01f;
                 Debug.Log("NPC prodal " + collectedGold + "g | trh ovlivněn");
                 collectedGold = 0f;

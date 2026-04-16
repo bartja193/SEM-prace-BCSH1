@@ -22,7 +22,6 @@ public class ShopManager : MonoBehaviour
 
     void Start()
     {
-        // První nástroj je vždy základní zdarma
         if (availableTools.Length > 0)
             currentTool = availableTools[0];
     }
