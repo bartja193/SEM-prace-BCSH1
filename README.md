@@ -56,7 +56,7 @@ Git repozitář: https://github.com/bartja193/SEM-prace-BCSH1
 	- Engine: Unity
 
 
-***Assety**
+**Assety**
 
 	- Cowboys Cats 2D by MGLawless (Unity Asset Store)
 
