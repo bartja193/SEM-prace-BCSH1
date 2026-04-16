@@ -52,13 +52,10 @@ Git repozitář: https://github.com/bartja193/SEM-prace-BCSH1
 	
 **Screenshots**
 
-	![Screenshot](https://github.com/bartja193/SEM-prace-BCSH1/raw/main/Screenshots/Town.png)
-	
-	![Screenshot](https://github.com/bartja193/SEM-prace-BCSH1/raw/main/Screenshots/Merchant.png)
-	
-	![Screenshot](https://github.com/bartja193/SEM-prace-BCSH1/raw/main/Screenshots/Shop.png)
-	
-	![Screenshot](https://github.com/bartja193/SEM-prace-BCSH1/raw/main/Screenshots/Town.png)
+![Screenshot](Screenshots/Town.png)
+![Screenshot](Screenshots/Merchant.png)
+![Screenshot](Screenshots/Shop.png)
+![Screenshot](Screenshots/GoldOre.png)
 
 **Použité technologie**
 
