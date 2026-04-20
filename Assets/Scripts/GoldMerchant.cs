@@ -12,16 +12,15 @@ public class GoldMerchant : MonoBehaviour
 
     void ProdejZlato()
     {
-            float gold = InventoryManager.Instance.gold;
+        float gold = InventoryManager.Instance.gold;
 
-            if (gold <= 0)
-            {
-                Debug.Log("Nemáš žádné zlato!");
-                return;
-            }
+        if (gold <= 0)
+        {
+            FloatingTextManager.Instance.Show("Nemáš žádné zlato!", Color.red);
+            return;
+        }
 
-            MarketManager.Instance.SellGold(gold);
-            Debug.Log("Prodáno! Peníze: $" + InventoryManager.Instance.money);
+        MarketManager.Instance.SellGold(gold);
     }
 
     void OnTriggerEnter2D(Collider2D other)

@@ -19,13 +19,13 @@ public class GoldDeposit : MonoBehaviour
             ToolData currentTool = ShopManager.Instance.GetCurrentTool();
             if (currentTool == null || currentTool.miningSpeed <= 1f)
             {
-                Debug.Log("Potřebuješ lepší nástroj!");
+                FloatingTextManager.Instance.Show("Potřebuješ lepší nástroj!", Color.red);
                 return;
             }
 
             if (currentGold <= 0)
             {
-                Debug.Log("Žíla je vyčerpaná!");
+                FloatingTextManager.Instance.Show("Žíla je vyčerpaná!", Color.red);
                 return;
             }
 

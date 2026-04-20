@@ -50,7 +50,6 @@ public class EnergyManager : MonoBehaviour
     {
         if (InventoryManager.Instance.money < 100f)
         {
-            Debug.Log("Nemáš dost peněz na spánek! Potřebuješ $100");
             return;
         }
 

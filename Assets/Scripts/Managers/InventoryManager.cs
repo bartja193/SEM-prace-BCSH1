@@ -9,7 +9,6 @@ public class InventoryManager : MonoBehaviour
 
     void Awake()
     {
-        // Singleton - jen jedna instance existuje ve hře
         if (Instance == null)
         {
             Instance = this;
@@ -20,7 +19,6 @@ public class InventoryManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
     public void AddGold(float amount)
     {
         gold += amount;

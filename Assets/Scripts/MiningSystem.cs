@@ -78,7 +78,7 @@ public class MiningSystem : MonoBehaviour
         // Těžení a rýžování vyžaduje energii
         if (!EnergyManager.Instance.HasEnergy(5f))
         {
-            Debug.Log("Nemáš dost energie! Jdi se najíst nebo spát.");
+            FloatingTextManager.Instance.Show("Nemáš dost energie!", Color.red);
             ResetMining();
             return;
         }
@@ -98,7 +98,7 @@ public class MiningSystem : MonoBehaviour
             River river = FindFirstObjectByType<River>();
             if (river != null && !river.CanMine())
             {
-                Debug.Log("Řeka je vyčerpaná! Jdi spát.");
+                FloatingTextManager.Instance.Show("Řeka je vyčerpaná!", Color.red);
                 ResetMining();
                 return;
             }

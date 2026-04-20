@@ -13,7 +13,7 @@ public class MarketManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject );
         }
         else
         {
@@ -44,7 +44,7 @@ public class MarketManager : MonoBehaviour
     {
         if (InventoryManager.Instance.gold < amount)
         {
-            Debug.Log("Nemáš dost zlata!");
+            FloatingTextManager.Instance.Show("Nemáš dost zlata!", Color.red);
             return;
         }
 
@@ -54,7 +54,7 @@ public class MarketManager : MonoBehaviour
         InventoryManager.Instance.SpendGold(amount);
         InventoryManager.Instance.AddMoney(earned);
 
-        Debug.Log("Prodáno: " + amount + "g za $" + earned);
+        FloatingTextManager.Instance.Show("Prodáno: " + amount + "g za $" + earned, Color.yellow);
         Debug.Log("Aktuální cena: $" + currentPrice);
     }
 }
