@@ -38,11 +38,11 @@ Git repozitář: https://github.com/bartja193/SEM-prace-BCSH1
 	- Pokročilá AI - 🟥
 	- Trh 🟨
 	- 1 úroveň - 🟩
-	- 2 úroveň - 🟨
+	- 2 úroveň - 🟩
 	- 3 úroveň - 🟥
 	- Animace - 🟨
-	- Teleport mezi levely - 🟨
-	- Nákup zaměstnanců (automatizace) - 🟥
+	- Teleport mezi levely - 🟩
+	- Nákup zaměstnanců (automatizace) - 🟩
 	- PVE - 🟥
 	- Nákup plotu/domu -  🟥
 	- Systém resetu pro obdržení bonusu - 🟥

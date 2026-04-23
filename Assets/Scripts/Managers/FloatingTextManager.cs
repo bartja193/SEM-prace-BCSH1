@@ -19,6 +19,11 @@ public class FloatingTextManager : MonoBehaviour
 
     public void Show(string text, Color color)
     {
+        if (playerTransform == null)
+            playerTransform = GameObject.FindWithTag("Player")?.transform;
+
+        if (playerTransform == null) return;
+
         Vector3 pos = playerTransform.position + Vector3.up * 2f;
         GameObject go = Instantiate(floatingTextPrefab, pos, Quaternion.identity);
         go.GetComponent<FloatingText>().SetText(text, color);
