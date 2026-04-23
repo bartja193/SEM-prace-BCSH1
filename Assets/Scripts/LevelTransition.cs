@@ -12,6 +12,7 @@ public class LevelTransition : MonoBehaviour
         {
             PlayerPrefs.SetFloat("SpawnX", spawnPosition.x);
             PlayerPrefs.SetFloat("SpawnY", spawnPosition.y);
+            PlayerPrefs.SetInt("SceneTransition", 1);
             SceneManager.LoadScene(targetScene);
         }
     }
