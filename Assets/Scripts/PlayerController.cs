@@ -94,21 +94,17 @@ public class PlayerController : MonoBehaviour
 
         if (currentHp <= 0)
         {
-            Debug.Log("SceneTransition flag: " + PlayerPrefs.GetInt("SceneTransition", 0));
-            Debug.Log("SpawnX: " + PlayerPrefs.GetFloat("SpawnX", -999));
             Debug.Log("Hráč zemřel");
-            currentHp = maxHp;
             if (InventoryManager.Instance != null)
             {
                 InventoryManager.Instance.SpendMoney(500f);
             }
+            currentHp = maxHp;
+            UpdateSlider();
             PlayerPrefs.SetFloat("SpawnX", -65f);
             PlayerPrefs.SetFloat("SpawnY", 20f);
             PlayerPrefs.SetInt("SceneTransition", 1);
             SceneManager.LoadScene("Level1");
-
-            Debug.Log("SceneTransition flag: " + PlayerPrefs.GetInt("SceneTransition", 0));
-            Debug.Log("SpawnX: " + PlayerPrefs.GetFloat("SpawnX", -999));
         }
     }
 

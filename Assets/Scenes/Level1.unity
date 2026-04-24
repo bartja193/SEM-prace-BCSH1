@@ -12874,7 +12874,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &281623422
 SpriteRenderer:
   serializedVersion: 2
@@ -54803,10 +54803,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2139344887}
   - {fileID: 641306755}
   - {fileID: 1924743909}
   - {fileID: 1540485295}
-  - {fileID: 2139344887}
   - {fileID: 1938782786}
   - {fileID: 1741474395}
   - {fileID: 1132756700}

@@ -103,7 +103,7 @@ public class MiningSystem : MonoBehaviour
                 return;
             }
 
-            float earned = goldPerMine * ShopManager.Instance.GetMiningSpeed();
+            float earned = goldPerMine;
             InventoryManager.Instance.AddGold(earned);
             river?.Mine();
             Debug.Log("Vyrýžováno: " + earned + "g");

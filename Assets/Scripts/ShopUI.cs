@@ -30,6 +30,21 @@ public class ShopUI : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+    }
+
+    void Start()
+    {
+        shopPanel.SetActive(false);
+        bridge.SetActive(false);
+
+        buyPickaxeButton.onClick.AddListener(() => BuyTool(1));
+        buyDrillButton.onClick.AddListener(() => BuyTool(2));
+        buyBridgeButton.onClick.AddListener(() => BuyBridge());
+        exitShopButton.onClick.AddListener(() => CloseShop());
+
+        pickaxePriceText.text = "Krumpáč - $" + ShopManager.Instance.availableTools[1].price;
+        drillPriceText.text = "Vrtačka - $" + ShopManager.Instance.availableTools[2].price;
+        bridgePriceText.text = "Most - $5000";
 
         if (PlayerPrefs.GetInt("BridgeBought", 0) == 1)
         {
@@ -41,20 +56,6 @@ public class ShopUI : MonoBehaviour
                 true
             );
         }
-    }
-
-    void Start()
-    {
-        shopPanel.SetActive(false);
-
-        buyPickaxeButton.onClick.AddListener(() => BuyTool(1));
-        buyDrillButton.onClick.AddListener(() => BuyTool(2));
-        buyBridgeButton.onClick.AddListener(() => BuyBridge());
-        exitShopButton.onClick.AddListener(() => CloseShop());
-
-        pickaxePriceText.text = "Krumpáč - $" + ShopManager.Instance.availableTools[1].price;
-        drillPriceText.text = "Vrtačka - $" + ShopManager.Instance.availableTools[2].price;
-        bridgePriceText.text = "Most - $5000";
     }
 
     public void ToggleShop()
@@ -70,7 +71,7 @@ public class ShopUI : MonoBehaviour
         shopTitle.text = "Obchod";
 
         buyBridgeButton.gameObject.SetActive(!bridgeBought);
-        buyPickaxeButton.gameObject.SetActive(!bridgeBought);
+        buyPickaxeButton.gameObject.SetActive(!pickaxeBought);
     }
 
     void CloseShop()
@@ -97,9 +98,9 @@ public class ShopUI : MonoBehaviour
             return;
         }
 
+        PlayerPrefs.SetInt("BridgeBought", 1);
         InventoryManager.Instance.SpendMoney(5000f);
         bridgeBought = true;
-        PlayerPrefs.SetInt("BridgeBought", 1);
 
         Physics2D.IgnoreLayerCollision(
             LayerMask.NameToLayer("Default"),
