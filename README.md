@@ -35,16 +35,16 @@ Git repozitář: https://github.com/bartja193/SEM-prace-BCSH1
 	- Základní logika Hry - 🟩
 	- systém Energie - 🟩
 	- Jednoduchá AI - 🟩
-	- Pokročilá AI - 🟥
+	- Pokročilá AI - 🟩
 	- Trh 🟨
 	- 1 úroveň - 🟩
 	- 2 úroveň - 🟩
-	- 3 úroveň - 🟥
+	- 3 úroveň - 🟨
 	- Animace - 🟨
 	- Teleport mezi levely - 🟩
 	- Nákup zaměstnanců (automatizace) - 🟩
 	- PVE - 🟥
-	- Nákup plotu/domu -  🟥
+	- Nákup plotu/domu -  🟩
 	- Systém resetu pro obdržení bonusu - 🟥
 	- Vybalancování progresu - 🟥
 
@@ -56,6 +56,7 @@ Git repozitář: https://github.com/bartja193/SEM-prace-BCSH1
 ![Screenshot](Screenshots/Merchant.png)
 ![Screenshot](Screenshots/Shop.png)
 ![Screenshot](Screenshots/GoldOre.png)
+![Screenshot](Screenshots/Dungeon.png)
 
 **Použité technologie**
 

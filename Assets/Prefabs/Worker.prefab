@@ -104,7 +104,8 @@ GameObject:
   - component: {fileID: 4818716754188122698}
   - component: {fileID: 8939884085830929630}
   - component: {fileID: 6581298904253550641}
-  - component: {fileID: 1049592576312320979}
+  - component: {fileID: -8686196909900973062}
+  - component: {fileID: 8898377810339657690}
   m_Layer: 2
   m_Name: Worker
   m_TagString: Worker
@@ -244,7 +245,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.15249118, y: -1.3998427}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -254,7 +255,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.315, y: 2.945}
+  m_Size: {x: 2.0100176, y: 0.1453147}
   m_EdgeRadius: 0
 --- !u!50 &6581298904253550641
 Rigidbody2D:
@@ -264,7 +265,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3538195632879558061}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -283,7 +284,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1049592576312320979
+--- !u!114 &-8686196909900973062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3538195632879558061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd3f2f16f1edcf04b82985426142e7ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SortByY
+--- !u!114 &8898377810339657690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -297,9 +310,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MinerAI
   minePoint: {fileID: 0}
   depositPoint: {fileID: 0}
-  moveSpeed: 2
-  miningTime: 3
-  goldPerTrip: 10
+  moveSpeed: 4
+  miningTime: 30
+  goldPerTrip: 20
 --- !u!1 &7898635036411388397
 GameObject:
   m_ObjectHideFlags: 0

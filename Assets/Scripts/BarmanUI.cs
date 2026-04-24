@@ -56,10 +56,13 @@ public class BarmanUI : MonoBehaviour
     void Sleep()
     {
         EnergyManager.Instance.Sleep();
+        FindObjectOfType<PlayerController>().Heal(10);
+        CloseShop();
     }
 
     void Eat()
     {
         EnergyManager.Instance.EatFood();
+        FindObjectOfType<PlayerController>().Heal(2);
     }
 }
