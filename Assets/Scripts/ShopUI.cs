@@ -30,6 +30,17 @@ public class ShopUI : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+
+        if (PlayerPrefs.GetInt("BridgeBought", 0) == 1)
+        {
+            bridgeBought = true;
+            bridge.SetActive(true);
+            Physics2D.IgnoreLayerCollision(
+                LayerMask.NameToLayer("Default"),
+                LayerMask.NameToLayer("Bridge"),
+                true
+            );
+        }
     }
 
     void Start()
@@ -88,6 +99,7 @@ public class ShopUI : MonoBehaviour
 
         InventoryManager.Instance.SpendMoney(5000f);
         bridgeBought = true;
+        PlayerPrefs.SetInt("BridgeBought", 1);
 
         Physics2D.IgnoreLayerCollision(
             LayerMask.NameToLayer("Default"),
