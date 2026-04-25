@@ -72,12 +72,11 @@ Git repozitář: https://github.com/bartja193/SEM-prace-BCSH1
 
 **Fonty**
 
-	- PixelPurl Font - https://www.1001fonts.com/licenses/ffp.html
+	- PixelPurl Font - [License](https://www.1001fonts.com/licenses/ffp.html)
 
 **Hudba**
 
-	- Swamp_Showdown - https://www.fesliyanstudios.com/policy
-	
+	- Swamp_Showdown [License](https://www.fesliyanstudios.com/policy)
 
 
 **Tutoriály**
