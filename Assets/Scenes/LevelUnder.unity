@@ -441,6 +441,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelTransition
   targetScene: Level1
   spawnPosition: {x: -22, y: 15}
+  isDungeonEntrance: 0
+  dungeonIndex: 0
 --- !u!1001 &565599745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3069,6 +3071,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5428118321469903371, guid: db56c4ba546b5fd4d8960e5c28d494e1, type: 3}
+      propertyPath: level
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428118321469903371, guid: db56c4ba546b5fd4d8960e5c28d494e1, type: 3}
+      propertyPath: maxHp
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5428118321469903371, guid: db56c4ba546b5fd4d8960e5c28d494e1, type: 3}
+      propertyPath: reward
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 6856493789644766829, guid: db56c4ba546b5fd4d8960e5c28d494e1, type: 3}
       propertyPath: m_Name
       value: EnemyBat01
@@ -3086,6 +3100,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 975946805146658821, guid: dfd9a004b6eb30e43bc1ca85f52d2f08, type: 3}
+      propertyPath: level
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 975946805146658821, guid: dfd9a004b6eb30e43bc1ca85f52d2f08, type: 3}
+      propertyPath: maxHp
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 975946805146658821, guid: dfd9a004b6eb30e43bc1ca85f52d2f08, type: 3}
+      propertyPath: reward
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8129552953930914826, guid: dfd9a004b6eb30e43bc1ca85f52d2f08, type: 3}
       propertyPath: m_Name
       value: EnemyRat01

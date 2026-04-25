@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            damage = WeaponShopManager.Instance.GetCurrentDMG();
             Attack();
         }
     }
@@ -131,17 +132,16 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        lastAttackTime = Time.time;
         Debug.Log("attack");
 
 
-
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, attackRange);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, WeaponShopManager.Instance.GetCurrentRange());
         foreach (Collider2D hit in hits)
         {
             EnemyAI enemy = hit.GetComponent<EnemyAI>();
             if (enemy != null)
             {
+                lastAttackTime = Time.time;
                 FloatingTextManager.Instance.Show("-" + damage, Color.green);
                 animator.SetTrigger("Attack");
                 enemy.TakeDamage(damage);

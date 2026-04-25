@@ -151,8 +151,8 @@ GameObject:
   - component: {fileID: 5569102294421041215}
   - component: {fileID: 1965221000150730233}
   - component: {fileID: 6084102802462845559}
-  - component: {fileID: 712342659901938301}
   - component: {fileID: 1888108789285694080}
+  - component: {fileID: 1642144592123836309}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -169,7 +169,7 @@ Transform:
   m_GameObject: {fileID: 8208711103761866895}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -72.63, y: 0.41999996, z: 0}
+  m_LocalPosition: {x: -72.587, y: 0.63, z: 0}
   m_LocalScale: {x: 0.020006774, y: 0.02835574, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -235,7 +235,7 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!50 &3405854548071513886
 Rigidbody2D:
   serializedVersion: 5
@@ -275,10 +275,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f72d685e20e93604b9b1d33ea4fe59c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  moveSpeed: 8
   maxHp: 10
+  damage: 1
+  moveSpeed: 8
+  currentHp: 0
   healthSlider: {fileID: 0}
   attackRange: 1.5
+  attackCooldown: 150
+  lastAttackTime: 0
 --- !u!95 &1965221000150730233
 Animator:
   serializedVersion: 7
@@ -335,7 +339,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -4.05772, y: -34.485123}
+  m_Offset: {x: -4.05772, y: -34.06019}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -345,10 +349,22 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 49.764694, y: 4.6547546}
+  m_Size: {x: 49.764694, y: 9.230667}
   m_EdgeRadius: 0
---- !u!61 &712342659901938301
-BoxCollider2D:
+--- !u!114 &1888108789285694080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8208711103761866895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd3f2f16f1edcf04b82985426142e7ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SortByY
+--- !u!70 &1642144592123836309
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -377,34 +393,13 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -2.7942743, y: -34.275867}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 57.880135, y: 73.625}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 43.9087, y: 5.073265}
-  m_EdgeRadius: 0
---- !u!114 &1888108789285694080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8208711103761866895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd3f2f16f1edcf04b82985426142e7ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SortByY
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 57.880135, y: 73.62501}
+  m_Direction: 0
 --- !u!1 &8248337351198782135
 GameObject:
   m_ObjectHideFlags: 0
