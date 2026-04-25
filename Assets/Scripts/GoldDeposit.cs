@@ -17,7 +17,7 @@ public class GoldDeposit : MonoBehaviour
         if (playerNearby && Input.GetKeyDown(KeyCode.E))
         {
             ToolData currentTool = ShopManager.Instance.GetCurrentTool();
-            if (currentTool == null || currentTool.miningSpeed <= 1f)
+            if (currentTool == null || currentTool.miningPower <= 1f)
             {
                 FloatingTextManager.Instance.Show("Potřebuješ lepší nástroj!", Color.red);
                 return;

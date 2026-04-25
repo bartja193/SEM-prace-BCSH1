@@ -70,10 +70,13 @@ Git repozitář: https://github.com/bartja193/SEM-prace-BCSH1
 
 	- Kenney.nl (CC0)
 
+**Fonty**
+
+	- PixelPurl Font - https://www.1001fonts.com/licenses/ffp.html
 
 **Hudba**
 
-	
+	- Swamp_Showdown - https://www.fesliyanstudios.com/policy
 	
 
 

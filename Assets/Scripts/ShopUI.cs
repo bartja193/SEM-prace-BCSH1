@@ -72,9 +72,10 @@ public class ShopUI : MonoBehaviour
 
         buyBridgeButton.gameObject.SetActive(!bridgeBought);
         buyPickaxeButton.gameObject.SetActive(!pickaxeBought);
+        buyDrillButton.gameObject.SetActive(!drillBought);
     }
 
-    void CloseShop()
+    public void CloseShop()
     {
         isOpen = false;
         shopPanel.SetActive(false);
@@ -83,23 +84,23 @@ public class ShopUI : MonoBehaviour
     void BuyTool(int index)
     {
         ShopManager.Instance.BuyTool(index);
-        if (index == 0) {
+        if (index == 1) {
             pickaxeBought = true;
-        } else if (index == 1) {
+        } else if (index == 2) {
             drillBought = true;
         }
     }
 
     void BuyBridge()
     {
-        if (InventoryManager.Instance.money < 5000f)
+        if (InventoryManager.Instance.money < 3000f)
         {
             Debug.Log("Nemáš dost peněz!");
             return;
         }
 
         PlayerPrefs.SetInt("BridgeBought", 1);
-        InventoryManager.Instance.SpendMoney(5000f);
+        InventoryManager.Instance.SpendMoney(3000f);
         bridgeBought = true;
 
         Physics2D.IgnoreLayerCollision(

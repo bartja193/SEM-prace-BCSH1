@@ -28,10 +28,10 @@ public class MarketManager : MonoBehaviour
 
     void Update()
     {
-        supplyPressure = Mathf.Lerp(supplyPressure, 0f, Time.deltaTime * 0.1f);
+        supplyPressure = Mathf.Lerp(supplyPressure, 0f, Time.deltaTime * 0.2f);
 
         currentPrice = baseGoldPrice * (1f - supplyPressure * 0.5f);
-        currentPrice += (Mathf.PerlinNoise(Time.time * 0.2f, 0f) - 0.5f) * 60f;
+        currentPrice += (Mathf.PerlinNoise(Time.time * 0.05f, 0f) - 0.5f) * 60f;
         currentPrice = Mathf.Max(currentPrice, 10f);
     }
 

@@ -3,6 +3,7 @@ using UnityEngine;
 public class Merchant : MonoBehaviour
 {
     private bool playerNearby = false;
+    public GameObject gymPanel;
 
     void Update()
     {
@@ -18,7 +19,7 @@ public class Merchant : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNearby = true;
-            Debug.Log("Hráč u obchodníka");
+            FloatingTextManager.Instance.Show("klikni E pro otevření obchodu!", Color.green);
         }
     }
 
@@ -26,5 +27,6 @@ public class Merchant : MonoBehaviour
     {
         if (other.CompareTag("Player"))
             playerNearby = false;
+        ShopUI.Instance.CloseShop();
     }
 }

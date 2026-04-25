@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Pickaxe
   m_EditorClassIdentifier: Assembly-CSharp::ToolData
   toolName: 
-  miningSpeed: 3
+  miningPower: 3
+  miningSpeed: 0.5
   price: 800

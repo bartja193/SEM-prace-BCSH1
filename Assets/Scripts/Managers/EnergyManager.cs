@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ public class EnergyManager : MonoBehaviour
     public float maxEnergy = 100f;
     public float currentEnergy;
     public Slider energyBar;
+    public TextMeshProUGUI energyStatus;
 
     void Awake()
     {
@@ -27,6 +29,16 @@ public class EnergyManager : MonoBehaviour
     void Update()
     {
         energyBar.value = currentEnergy;
+        energyStatus.text = currentEnergy.ToString() + "/" + maxEnergy.ToString();
+    }
+
+    void UpdateSlider()
+    {
+        if (energyBar != null)
+        {
+            energyBar.maxValue = maxEnergy;
+            energyBar.value = currentEnergy;
+        }
     }
 
     public bool HasEnergy(float amount)
@@ -44,6 +56,14 @@ public class EnergyManager : MonoBehaviour
     {
         currentEnergy += amount;
         currentEnergy = Mathf.Min(currentEnergy, maxEnergy);
+        UpdateSlider();
+    }
+
+    public void AddMaxEnergy(float amount)
+    {
+        maxEnergy += amount;
+        currentEnergy += amount;
+        UpdateSlider();
     }
 
     public void Sleep()

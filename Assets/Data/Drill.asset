@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Drill
   m_EditorClassIdentifier: Assembly-CSharp::ToolData
   toolName: 
-  miningSpeed: 8
-  price: 2000
+  miningPower: 6
+  miningSpeed: 0.1
+  price: 8000

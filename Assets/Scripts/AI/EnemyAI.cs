@@ -5,6 +5,7 @@ public class EnemyAI : MonoBehaviour
     public float detectionRange = 12f;
     public float moveSpeed = 3f;
     public int maxHp = 3;
+    public float reward = 5;
 
     private int currentHp;
     private Transform player;
@@ -68,7 +69,7 @@ public class EnemyAI : MonoBehaviour
         currentHp -= amount;
         if (currentHp <= 0)
         {
-            InventoryManager.Instance.AddGold(5f);
+            InventoryManager.Instance.AddGold(reward);
             Destroy(gameObject);
         }
     }

@@ -60,6 +60,7 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\AI\ProspectorAI.cs" />
     <Compile Include="Assets\Scripts\Plots\PlotManager.cs" />
+    <Compile Include="Assets\Scripts\Dungeons\DungeonManager.cs" />
     <Compile Include="Assets\Scripts\FloatingText.cs" />
     <Compile Include="Assets\Scripts\Managers\SaveManager.cs" />
     <Compile Include="Assets\Scripts\Plots\PlotShopUI.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Assets\Scripts\LevelTransition.cs" />
     <Compile Include="Assets\Scripts\GoldDeposit.cs" />
     <Compile Include="Assets\Scripts\Merchant.cs" />
+    <Compile Include="Assets\Scripts\Gym.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

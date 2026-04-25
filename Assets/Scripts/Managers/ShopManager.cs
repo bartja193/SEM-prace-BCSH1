@@ -29,7 +29,7 @@ public class ShopManager : MonoBehaviour
     public float GetMiningSpeed()
     {
         if (currentTool == null) return 1f;
-        return currentTool.miningSpeed;
+        return currentTool.miningPower;
     }
 
     public void BuyTool(int index)
@@ -46,7 +46,7 @@ public class ShopManager : MonoBehaviour
 
         InventoryManager.Instance.SpendMoney(tool.price);
         currentTool = tool;
-        Debug.Log("Koupeno: " + tool.toolName + " | rychlost: " + tool.miningSpeed);
+        Debug.Log("Koupeno: " + tool.toolName + " | rychlost: " + tool.miningPower);
     }
 
     public ToolData GetCurrentTool()

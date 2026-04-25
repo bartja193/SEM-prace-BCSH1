@@ -47,7 +47,7 @@ public class BarmanUI : MonoBehaviour
         barmanPanel.SetActive(true);
     }
 
-    void CloseShop()
+    public void CloseShop()
     {
         isOpen = false;
         barmanPanel.SetActive(false);
@@ -57,6 +57,7 @@ public class BarmanUI : MonoBehaviour
     {
         EnergyManager.Instance.Sleep();
         FindObjectOfType<PlayerController>().Heal(10);
+        DungeonManager.Instance.ResetAllDungeons();
         CloseShop();
     }
 

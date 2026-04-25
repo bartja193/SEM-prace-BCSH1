@@ -6,7 +6,6 @@ public class MiningSystem : MonoBehaviour
     public static MiningSystem Instance;
 
     public Slider miningBar;
-    public float miningTime = 2f;
     public float goldPerMine = 1f;
 
     private bool isNearRiver = false;
@@ -14,6 +13,7 @@ public class MiningSystem : MonoBehaviour
     private float miningProgress = 0f;
     private GoldDeposit currentDeposit = null;
     private Animator playerAnimator;
+    private float riverMiningTime = 1f;
 
     private enum InteractType { None, River, Deposit }
     private InteractType currentInteract = InteractType.None;
@@ -48,10 +48,20 @@ public class MiningSystem : MonoBehaviour
         if (isMining)
         {
             miningProgress += Time.deltaTime;
-            miningBar.value = miningProgress / miningTime;
 
-            if (miningProgress >= miningTime)
-                CompleteMining();
+            if (currentInteract == InteractType.River)
+            {
+                miningBar.value = miningProgress / riverMiningTime;
+                if (miningProgress >= riverMiningTime)
+                    CompleteMining();
+            }
+            else
+            {
+                ToolData currentTool = ShopManager.Instance.GetCurrentTool();
+                miningBar.value = miningProgress / currentTool.miningSpeed;
+                if (miningProgress >= currentTool.miningSpeed)
+                    CompleteMining();
+            }
         }
 
         if (!isNearRiver && currentInteract == InteractType.River && isMining)

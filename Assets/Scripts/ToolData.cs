@@ -4,6 +4,7 @@ using UnityEngine;
 public class ToolData : ScriptableObject
 {
     public string toolName;
+    public float miningPower;
     public float miningSpeed;
     public float price;
 }

@@ -1,22 +1,26 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance;
+
+    public int maxHp = 10;
+    public int damage = 1;
     public float moveSpeed = 5f;
+    public int currentHp;
 
     private Animator animator;
     private Rigidbody2D rb;
     private Vector2 movement;
 
-    public int maxHp = 10;
-    private int currentHp;
     public Slider healthSlider;
 
     public float attackRange = 1.5f;
     public float attackCooldown = 150f;
-    private float lastAttackTime = 0f;
+    public float lastAttackTime = 0f;
 
     void Awake()
     {
@@ -25,9 +29,10 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
+        Instance = this;
         DontDestroyOnLoad(gameObject);
         SceneManager.sceneLoaded += OnSceneLoaded;
+
     }
 
     void Start()
@@ -90,6 +95,7 @@ public class PlayerController : MonoBehaviour
     {
         currentHp -= amount;
         currentHp = Mathf.Max(currentHp, 0);
+        FloatingTextManager.Instance.Show("-" + amount, Color.red);
         UpdateSlider();
 
         if (currentHp <= 0)
@@ -136,8 +142,9 @@ public class PlayerController : MonoBehaviour
             EnemyAI enemy = hit.GetComponent<EnemyAI>();
             if (enemy != null)
             {
+                FloatingTextManager.Instance.Show("-" + damage, Color.green);
                 animator.SetTrigger("Attack");
-                enemy.TakeDamage(1);
+                enemy.TakeDamage(damage);
             }
         }
     }
@@ -147,5 +154,23 @@ public class PlayerController : MonoBehaviour
         currentHp += amount;
         currentHp = Mathf.Min(currentHp, maxHp);
         UpdateSlider();
+    }
+
+    public void AddMaxHP(int amount)
+    {
+        maxHp += amount;
+        currentHp += amount;
+        UpdateSlider();
+    }
+
+    public void AddDMG(int amount)
+    {
+        damage += amount;
+    }
+
+
+    public void AddSpeed(float amount)
+    {
+        moveSpeed += amount;
     }
 }
