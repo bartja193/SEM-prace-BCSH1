@@ -19,6 +19,12 @@ public class InventoryManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void OnDestroy()
+    {
+        Debug.LogWarning("InventoryManager byl zničen! " + gameObject.name);
+    }
+
     public void AddGold(float amount)
     {
         gold += amount;

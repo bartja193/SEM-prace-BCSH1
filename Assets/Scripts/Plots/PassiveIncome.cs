@@ -4,7 +4,7 @@ public class PassiveIncome : MonoBehaviour
 {
     public static PassiveIncome Instance;
 
-    private float goldPerSecond = 0f;
+    public float goldPerSecond = 0f;
     private float timer = 0f;
 
     void Awake()

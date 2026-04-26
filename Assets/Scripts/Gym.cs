@@ -123,11 +123,11 @@ public class Gym : MonoBehaviour
             {
                 Debug.Log("Nemáš dost peněz! Potřebuješ $500");
                 return;
-                cDMG++;
             }
 
             InventoryManager.Instance.SpendMoney(500f);
             FindObjectOfType<PlayerController>().AddDMG(1);
+            cDMG++;
         }
         else
         {

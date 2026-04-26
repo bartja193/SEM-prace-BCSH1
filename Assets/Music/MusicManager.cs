@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
+    public static MusicManager Instance;
     public AudioClip[] playlist;
     private AudioSource audioSource;
     private int currentTrack = 0;
+
+    [Range(0f, 1f)] public float musicVolume = 1f;
 
     void Awake()
     {
@@ -13,6 +16,7 @@ public class MusicManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+        Instance = this;
         DontDestroyOnLoad(gameObject);
         audioSource = GetComponent<AudioSource>();
     }
@@ -34,6 +38,13 @@ public class MusicManager : MonoBehaviour
     void PlayTrack(int index)
     {
         audioSource.clip = playlist[index];
+        audioSource.volume = musicVolume;
         audioSource.Play();
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        musicVolume = volume;
+        audioSource.volume = volume;
     }
 }

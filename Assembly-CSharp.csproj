@@ -52,6 +52,7 @@
     <Compile Include="Assets\Scripts\Managers\ShopManager.cs" />
     <Compile Include="Assets\Scripts\Managers\FloatingTextManager.cs" />
     <Compile Include="Assets\Scripts\AI\EnemyAI.cs" />
+    <Compile Include="Assets\Scripts\LeaderboardManager.cs" />
     <Compile Include="Assets\Scripts\Managers\EnergyManager.cs" />
     <Compile Include="Assets\Scripts\AI\MinerAI.cs" />
     <Compile Include="Assets\Scripts\Managers\SpriteRenderer.cs" />
@@ -66,7 +67,9 @@
     <Compile Include="Assets\Scripts\Plots\PlotShopUI.cs" />
     <Compile Include="Assets\Scripts\MiningSystem.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
+    <Compile Include="Assets\Scripts\EndScreenManager.cs" />
     <Compile Include="Assets\Music\MusicManager.cs" />
+    <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\ToolData.cs" />
     <Compile Include="Assets\Scripts\Managers\MarketManager.cs" />
     <Compile Include="Assets\Scripts\WeaponShopManager.cs" />
@@ -76,12 +79,15 @@
     <Compile Include="Assets\Scripts\WeaponShopUI.cs" />
     <Compile Include="Assets\Scripts\Plots\PlotMerchant.cs" />
     <Compile Include="Assets\Scripts\BarmanUI.cs" />
+    <Compile Include="Assets\Scripts\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\Plots\PassiveIncome.cs" />
     <Compile Include="Assets\Scripts\Barman.cs" />
+    <Compile Include="Assets\Music\SoundManager.cs" />
     <Compile Include="Assets\Scripts\LevelTransition.cs" />
     <Compile Include="Assets\Scripts\GoldDeposit.cs" />
     <Compile Include="Assets\Scripts\Merchant.cs" />
     <Compile Include="Assets\Scripts\WeaponData.cs" />
+    <Compile Include="Assets\Scripts\GameTimer.cs" />
     <Compile Include="Assets\Scripts\Gym.cs" />
   </ItemGroup>
   <ItemGroup>

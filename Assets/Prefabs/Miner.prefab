@@ -104,6 +104,7 @@ GameObject:
   - component: {fileID: 416530401854586177}
   - component: {fileID: 7714009232151658639}
   - component: {fileID: 1659237166918072253}
+  - component: {fileID: -8967362155207088569}
   m_Layer: 2
   m_Name: Miner
   m_TagString: Untagged
@@ -272,6 +273,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd3f2f16f1edcf04b82985426142e7ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SortByY
+--- !u!95 &-8967362155207088569
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6662329073840602488}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0f80c376ca222554b9d1285911cd013e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7381370825117152706
 GameObject:
   m_ObjectHideFlags: 0
