@@ -43,10 +43,19 @@ public class MainMenuManager : MonoBehaviour
 
         List<LeaderboardEntry> entries = leaderboardManager.GetEntries();
 
-        foreach (var entry in entries)
+        GameObject header = Instantiate(leaderboardEntryPrefab, leaderboardContent);
+        TMP_Text[] headerTexts = header.GetComponentsInChildren<TMP_Text>();
+        headerTexts[0].text = "Rank";
+        headerTexts[1].text = "Name";
+        headerTexts[2].text = "Balance";
+
+        for (int i = 0; i < 10; i++)
         {
             GameObject go = Instantiate(leaderboardEntryPrefab, leaderboardContent);
-            go.GetComponentInChildren<TMP_Text>().text = entry.nick + " - $" + entry.score.ToString("F0");
+            TMP_Text[] texts = go.GetComponentsInChildren<TMP_Text>();
+            texts[0].text = (i + 1) + ".";
+            texts[1].text = i < entries.Count ? entries[i].nick : "---";
+            texts[2].text = i < entries.Count ? "$" + string.Format("{0:N0}", entries[i].score).Replace(",", " ") : "";
         }
     }
 }

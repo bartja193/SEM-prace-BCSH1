@@ -10,11 +10,13 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
     public Slider musicSlider;
     public Slider sfxSlider;
+    public Button endButton;
 
     void Start()
     {
         musicSlider.value = MusicManager.Instance != null ? MusicManager.Instance.musicVolume : 1f;
         sfxSlider.value = SoundManager.Instance != null ? SoundManager.Instance.sfxVolume : 1f;
+        endButton.onClick.AddListener(() => QuitToEndScreen());
 
         musicSlider.onValueChanged.AddListener(OnMusicVolumeChanged);
         sfxSlider.onValueChanged.AddListener(OnSfxVolumeChanged);
@@ -47,7 +49,7 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         IsPaused = false;
-        SceneManager.LoadScene("EndScene");
+        GameTimer.Instance.EndGame();
     }
 
     void OnMusicVolumeChanged(float value)

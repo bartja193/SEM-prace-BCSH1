@@ -7,7 +7,7 @@ public class GameTimer : MonoBehaviour
     public static GameTimer Instance;
 
     [SerializeField] private TMP_Text timerText;
-    private float timeRemaining = 30f;
+    private float timeRemaining = 600f;
     private bool timerRunning = true;
 
     void Awake()
@@ -44,11 +44,12 @@ public class GameTimer : MonoBehaviour
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 
-    void EndGame()
+    public void EndGame()
     {
         if (InventoryManager.Instance != null)
             PlayerPrefs.SetFloat("FinalScore", InventoryManager.Instance.money);
         Destroy(GameManager.Instance.gameObject);
+        Destroy(PlayerController.Instance.gameObject);
         SceneManager.LoadScene("EndScene");
     }
 }
