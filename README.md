@@ -59,37 +59,26 @@ Git repozitář: https://github.com/bartja193/SEM-prace-BCSH1
 ![Screenshot](Screenshots/Dungeon.png)
 
 **Použité technologie**
-
-	- Jazyk: C#
-	- Engine: Unity
-
+Jazyk: C#
+Engine: Unity
 
 **Assety**
-
-	- Cowboys Cats 2D by MGLawless (Unity Asset Store)
-
-	- Kenney.nl (CC0)
+Cowboys Cats 2D by MGLawless (Unity Asset Store)
+Kenney.nl (CC0)
 
 **Fonty**
-
 PixelPurl Font - [License](https://www.1001fonts.com/licenses/ffp.html)
 
 **Hudba**
-
 Swamp_Showdown [License](https://www.fesliyanstudios.com/policy)
 
 
 **Tutoriály**
-
-	- Character Animations tutorial (YouTube)
-	https://www.youtube.com/watch?v=Zcl3QcNzgrk
-
-	- 2D Top Down RPG (YouTube)
-	https://www.youtube.com/watch?v=9zzUq6T-rtA\&list=PL6bqhqO0Ba776ksb3F9P\_xmUMT9WvmfFT
-
+Character Animations tutorial [YouTube](https://www.youtube.com/watch?v=Zcl3QcNzgrk)
+2D Top Down RPG [YouTube](https://www.youtube.com/watch?v=9zzUq6T-rtA\&list=PL6bqhqO0Ba776ksb3F9P\_xmUMT9WvmfFT)
+Unity Particle System Tutorial [YouTube](https://www.youtube.com/watch?v=Oo6ktMZzzhg)
 
 **Poznámky k licencím**
-
-	- Všechny použité assety a hudba jsou používány v souladu s jejich licencemi.
-	- Hra je vytvořena výhradně pro účely školní semestrální práce (nekomerční použití).
+Všechny použité assety a hudba jsou používány v souladu s jejich licencemi.
+ Hra je vytvořena výhradně pro účely školní semestrální práce (nekomerční použití).
 
