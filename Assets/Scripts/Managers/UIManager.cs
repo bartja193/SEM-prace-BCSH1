@@ -12,7 +12,11 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI goldMText;
     public TextMeshProUGUI healthText;
+    public TextMeshProUGUI DMGText;
+    public TextMeshProUGUI speedText;
+
     public Slider attackCooldownSlider;
+
 
     private bool isOpen = false;
 
@@ -44,6 +48,8 @@ public class UIManager : MonoBehaviour
         if (isOpen)
         {
             goldMText.text = "Cena Zlata:\n" + MarketManager.Instance.currentPrice.ToString("F0") + " $";
+            DMGText.text = "DMG:" + PlayerController.Instance.GetCurrentDMG().ToString();
+            speedText.text = "Speed:" + PlayerController.Instance.moveSpeed.ToString();
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -63,11 +69,16 @@ public class UIManager : MonoBehaviour
     void TabOpen()
     {
         goldMText.text = "Cena Zlata:\n" + MarketManager.Instance.currentPrice.ToString("F0") + " $";
+        DMGText.text = "DMG:" + PlayerController.Instance.GetCurrentDMG().ToString();
+        speedText.text = "Speed:" + PlayerController.Instance.moveSpeed.ToString();
+
         isOpen = true;
     }
     void TabClose()
     {
         goldMText.text = null;
+        DMGText.text = null;
+        speedText.text = null;
         isOpen = false;
     }
 

@@ -85,6 +85,7 @@ public class Gym : MonoBehaviour
         buyMaxHPButton.gameObject.SetActive(!HPbuy);
         buyDMGButton.gameObject.SetActive(!DMGbuy);
         buySpeedButton.gameObject.SetActive(!Speedbuy);
+        buyEnergyButton.gameObject.SetActive(!Energybuy);
     }
 
     void CloseShop()
@@ -98,13 +99,13 @@ public class Gym : MonoBehaviour
         if (cHP < 30)
         {
 
-            if (InventoryManager.Instance.money < 500f)
+            if (InventoryManager.Instance.money < 250f)
             {
                 Debug.Log("Nemáš dost peněz! Potřebuješ $500");
                 return;
             }
 
-            InventoryManager.Instance.SpendMoney(500f);
+            InventoryManager.Instance.SpendMoney(250f);
             FindObjectOfType<PlayerController>().AddMaxHP(1);
             cHP++;
         }
@@ -119,13 +120,13 @@ public class Gym : MonoBehaviour
     {
         if (cDMG < 10)
         {
-            if (InventoryManager.Instance.money < 500f)
+            if (InventoryManager.Instance.money < 250f)
             {
                 Debug.Log("Nemáš dost peněz! Potřebuješ $500");
                 return;
             }
 
-            InventoryManager.Instance.SpendMoney(500f);
+            InventoryManager.Instance.SpendMoney(250f);
             FindObjectOfType<PlayerController>().AddDMG(1);
             cDMG++;
         }
@@ -140,13 +141,13 @@ public class Gym : MonoBehaviour
     {
         if (cSpeed < 10)
         {
-            if (InventoryManager.Instance.money < 500f)
+            if (InventoryManager.Instance.money < 250f)
             {
                 Debug.Log("Nemáš dost peněz! Potřebuješ $500");
                 return;
             }
 
-            InventoryManager.Instance.SpendMoney(500f);
+            InventoryManager.Instance.SpendMoney(250f);
             FindObjectOfType<PlayerController>().AddSpeed(1);
             cSpeed++;
         }
@@ -160,15 +161,15 @@ public class Gym : MonoBehaviour
 
     void AddEnergy()
     {
-        if (cSpeed < 10)
+        if (cEnergy < 10)
         {
-            if (InventoryManager.Instance.money < 500f)
+            if (InventoryManager.Instance.money < 250f)
             {
                 Debug.Log("Nemáš dost peněz! Potřebuješ $500");
                 return;
             }
 
-            InventoryManager.Instance.SpendMoney(500f);
+            InventoryManager.Instance.SpendMoney(250f);
             FindObjectOfType<EnergyManager>().AddMaxEnergy(10f);
             cEnergy++;
         }

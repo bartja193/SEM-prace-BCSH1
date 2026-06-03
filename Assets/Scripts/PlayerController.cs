@@ -66,12 +66,6 @@ public class PlayerController : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.F5))
-            SaveManager.Instance.Save();
-
-        if (Input.GetKeyDown(KeyCode.F9))
-            SaveManager.Instance.Load();
-
         bool isMoving = movement.magnitude > 0;
         animator.SetBool("isMoving", isMoving);
 
@@ -82,7 +76,6 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            damage = WeaponShopManager.Instance.GetCurrentDMG();
             Attack();
         }
     }
@@ -107,13 +100,14 @@ public class PlayerController : MonoBehaviour
                 InventoryManager.Instance.SpendMoney(500f);
             }
             currentHp = maxHp;
-            UpdateSlider();
+            EnergyManager.Instance.AddEnergy(40);
+            UpdateSlider();       
             PlayerPrefs.SetFloat("SpawnX", -65f);
             PlayerPrefs.SetFloat("SpawnY", 20f);
             PlayerPrefs.SetInt("SceneTransition", 1);
             SceneManager.LoadScene("Level1");
         }
-    }
+    } 
 
     void UpdateSlider()
     {
@@ -126,14 +120,11 @@ public class PlayerController : MonoBehaviour
 
     void Attack()
     {
+        int totalDamage = damage + WeaponShopManager.Instance.GetCurrentDMG();
         if (Time.time - lastAttackTime < attackCooldown)
         {
-            Debug.Log("Cd na attack");
             return;
         }
-
-        Debug.Log("attack");
-
 
         Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, WeaponShopManager.Instance.GetCurrentRange());
         foreach (Collider2D hit in hits)
@@ -142,12 +133,19 @@ public class PlayerController : MonoBehaviour
             if (enemy != null)
             {
                 lastAttackTime = Time.time;
-                FloatingTextManager.Instance.Show("-" + damage, Color.green);
+                FloatingTextManager.Instance.Show("-" + totalDamage, Color.green);
                 animator.SetTrigger("Attack");
-                enemy.TakeDamage(damage);
+                enemy.TakeDamage(totalDamage);
             }
         }
     }
+
+    public float GetCurrentDMG()
+    {
+        float fdamage = damage + WeaponShopManager.Instance.GetCurrentDMG();
+        return fdamage;
+    }
+
 
     public void Heal(int amount)
     {

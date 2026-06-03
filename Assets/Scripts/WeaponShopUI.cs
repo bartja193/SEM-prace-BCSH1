@@ -88,10 +88,12 @@ public class WeaponShopUI : MonoBehaviour
         if (index == 1)
         {
             knifeBought = true;
+            buyKnifeButton.gameObject.SetActive(false);
         }
         else if (index == 2)
         {
             pForkBought = true;
+            buyPitchForkButton.gameObject.SetActive(false);
         }
     }
 

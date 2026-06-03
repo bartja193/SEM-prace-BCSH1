@@ -7,7 +7,7 @@ public class GameTimer : MonoBehaviour
     public static GameTimer Instance;
 
     [SerializeField] private TMP_Text timerText;
-    private float timeRemaining = 600f;
+    private float timeRemaining = 901f;
     private bool timerRunning = true;
 
     void Awake()
@@ -46,6 +46,9 @@ public class GameTimer : MonoBehaviour
 
     public void EndGame()
     {
+        float gold = InventoryManager.Instance.gold;
+        MarketManager.Instance.SellGold(gold);
+
         if (InventoryManager.Instance != null)
             PlayerPrefs.SetFloat("FinalScore", InventoryManager.Instance.money);
         Destroy(GameManager.Instance.gameObject);

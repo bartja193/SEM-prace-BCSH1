@@ -5,11 +5,11 @@ public class PlotManager : MonoBehaviour
     public static PlotManager Instance;
 
     public GameObject[] plotBlockers;
-    public GameObject[] minerPrefabs; // prefab těžaře pro každý plot
-    public Transform[] minerSpawnPoints; // kde se spawne těžař u každého plotu
+    public GameObject[] minerPrefabs; 
+    public Transform[] minerSpawnPoints;
 
-    private int[] plotPrices = { 1000, 2000, 4000, 8000 };
-    private int[] minerPrices = { 2000, 3000, 6000, 9000 };
+    private int[] plotPrices = { 500, 750, 1000, 1500 };
+    private int[] minerPrices = { 500, 750, 1000, 1500 };
 
     private int plotsBought = 0;
     private bool[] minersBought = new bool[4];
@@ -91,7 +91,6 @@ public class PlotManager : MonoBehaviour
     // TĚŽAŘI
     public bool CanBuyMiner()
     {
-        // může koupit těžaře pokud má aspoň jeden plot bez těžaře
         for (int i = 0; i < plotsBought; i++)
         {
             if (!minersBought[i]) return true;
@@ -130,7 +129,7 @@ public class PlotManager : MonoBehaviour
 
         InventoryManager.Instance.SpendMoney(price);
         minersBought[index] = true;
-        PassiveIncome.Instance.AddWorker(.5f); 
+        PassiveIncome.Instance.AddWorker(1f);
 
         GameObject miner = Instantiate(minerPrefabs[index], minerSpawnPoints[index].position, Quaternion.identity);
         MinerAI ai = miner.GetComponent<MinerAI>();

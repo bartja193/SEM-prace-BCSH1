@@ -84,7 +84,6 @@ public class EnergyManager : MonoBehaviour
         InventoryManager.Instance.SpendMoney(100f);
         currentEnergy = maxEnergy;
         MarketManager.Instance.supplyPressure = 0f;
-        SaveManager.Instance.Save();
         Debug.Log("Spal jsi! Energie obnovena, trh resetován, hra uložena.");
     }
 

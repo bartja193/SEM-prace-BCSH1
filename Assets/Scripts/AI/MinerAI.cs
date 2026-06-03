@@ -7,7 +7,6 @@ public class MinerAI : MonoBehaviour
     public Transform depositPoint;
     public float moveSpeed = 4f;
     public float miningTime = 30f;
-    public float goldPerTrip = 20f;
 
 
     private enum State { GoingToMine, Mining, Returning }
@@ -55,8 +54,6 @@ public class MinerAI : MonoBehaviour
                 if (Vector2.Distance(transform.position, depositPoint.position) < 0.2f)
                 {
                     rb.linearVelocity = Vector2.zero;
-                    InventoryManager.Instance.AddGold(goldPerTrip);
-                    FloatingTextManager.Instance.Show("+" + goldPerTrip + " zlato", Color.yellow);
                     state = State.GoingToMine;
                 }
                 break;

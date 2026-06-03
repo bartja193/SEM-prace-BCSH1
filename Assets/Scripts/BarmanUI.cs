@@ -56,7 +56,7 @@ public class BarmanUI : MonoBehaviour
     void Sleep()
     {
         EnergyManager.Instance.Sleep();
-        FindObjectOfType<PlayerController>().Heal(10);
+        FindObjectOfType<PlayerController>().Heal(40);
         DungeonManager.Instance.ResetAllDungeons();
         CloseShop();
     }
