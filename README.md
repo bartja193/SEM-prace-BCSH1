@@ -34,22 +34,63 @@ Git repozitář: https://github.com/bartja193/SEM-prace-BCSH1
 
 	- Základní logika Hry - 🟩
 	- systém Energie - 🟩
-	- Jednoduchá AI - 🟩
-	- Pokročilá AI - 🟩
-	- Trh 🟨
-	- 1 úroveň - 🟩
-	- 2 úroveň - 🟩
-	- 3 úroveň - 🟨
+	- AI - 🟩
+	- Trh 🟩
+	- Levely, Dungeony - 🟩
 	- Animace - 🟨
 	- Teleport mezi levely - 🟩
 	- Nákup zaměstnanců (automatizace) - 🟩
-	- PVE - 🟥
+	- PVE - 🟩
 	- Nákup plotu/domu -  🟩
 	- Systém resetu pro obdržení bonusu - 🟥
-	- Vybalancování progresu - 🟥
+	- Vybalancování progresu - 🟨
+
+## Funkcionality
+
+### Herní systém
+- Hra na čas – hráč má 15 minut na maximalizaci zisku, který se pak uloží do tabulky
+- Systém HP – hráč má životy, při smrti přijde o $500 a respawnuje na Level1
+- Systém energie – těžba spotřebovává energii, doplňuje se spánkem nebo jídlem
+- Pasivní příjem – zakoupení pozemků a najímání těžařů generuje zlato automaticky
+
+### Těžba
+- Rýžování zlata v řece nebo u žíly klávesou E s progress barem
+- Řeka a žíly mají omezené zásoby, obnovují se spánkem
+- Automatická těžba najatými těžaři na zakoupených pozemcích
+
+### Ekonomika
+- Dynamická cena zlata – mění se pomocí Perlin noise a supply pressure
+- Prodej zlata obchodníkovi za aktuální tržní cenu
+- NPC prospector který samostatně těží a prodává zlato, čeká na výhodnou cenu
+- Zakoupení mostu pro přístup na druhou část mapy
+
+### Obchody & Upgrady
+- Obchod s nástroji – zlepšení rychlosti a síly těžby
+- Obchod se zbraněmi – nůž, vidle pro boj s nepřáteli mění dmg ale i dosah útoku
+- Gym – upgrady HP, DMG, Speed, Energy za peníze
+- Barman – jídlo a pití pro doplnění energie
+
+### Boj
+- Nepřátelé s AI – detekují hráče, pronásledují, útočí na kontakt
+- Dungeony – speciální bojové zóny s odměnou
+- Útok hráče s dosahovou zbraní, cooldown systém
+
+### Více scén
+- Level1 – hlavní město s obchody, řekou a obchodníky
+- Level2 – důlní oblast s pozemky a těžaři
+- Dungeons – bojové zóny
+
+### Ukládání dat
+- Ukládání výsledků a high score do JSON souboru
+- Perzistence dat mezi scénami přes DontDestroyOnLoad singletony
+
+### UI
+- HUD – zlato, peníze, HP, energie, časovač
+- Kontrola Statů - pomocí klávesy Tab lze kontrolovat skryté stats
+- End screen – zobrazení finálního zůstatku
+- Lokální žebříček top 10 hráčů
 
 
-	
 **Screenshots**
 
 ![Screenshot](Screenshots/Town.png)
