@@ -51102,7 +51102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelTransition
   targetScene: LevelUnder3
-  spawnPosition: {x: 50, y: -2}
+  spawnPosition: {x: 50, y: -9}
   isDungeonEntrance: 1
   dungeonIndex: 2
 --- !u!61 &447222486
@@ -241613,7 +241613,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelTransition
   targetScene: LevelUnder2
-  spawnPosition: {x: 0, y: 0}
+  spawnPosition: {x: 0, y: -9}
   isDungeonEntrance: 1
   dungeonIndex: 1
 --- !u!61 &4049484666267857630
